@@ -1,0 +1,35 @@
+options {
+    STATIC = false;
+}
+
+PARSER_BEGIN(Tiny)
+
+package com.mycompany.tiny.compiler;
+
+public class Tiny {
+}
+
+PARSER_END(Tiny)
+
+SKIP : { " " | "\t" | "\n" | "\r" }
+
+TOKEN : {
+    < IF: "if" >
+  | < THEN: "then" >
+  | < ELSE: "else" >
+  | < END: "end" >
+  | < REPEAT: "repeat" >
+  | < UNTIL: "until" >
+  | < READ: "read" >
+  | < WRITE: "write" >
+  | < NUM: (["0"-"9"])+ >
+  | < ID: (["a"-"z","A"-"Z"])+>
+  | < ATRIB: ":=">
+}
+
+void Programa() :
+{
+}//variáveis locais
+{
+   <ID> <ATRIB> <NUM> <EOF>
+}

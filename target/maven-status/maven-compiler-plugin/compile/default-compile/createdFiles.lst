@@ -1,0 +1,8 @@
+com\mycompany\tiny\compiler\Tiny.class
+com\mycompany\exemplocompiladortiny\ExemploCompiladorTiny.class
+com\mycompany\tiny\compiler\SimpleCharStream.class
+com\mycompany\tiny\compiler\ParseException.class
+com\mycompany\tiny\compiler\TinyTokenManager.class
+com\mycompany\tiny\compiler\TokenMgrError.class
+com\mycompany\tiny\compiler\TinyConstants.class
+com\mycompany\tiny\compiler\Token.class
