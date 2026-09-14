@@ -11,27 +11,41 @@ public interface TinyConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int IF = 5;
+  int COMMENT = 5;
   /** RegularExpression Id. */
-  int THEN = 6;
+  int IF = 6;
   /** RegularExpression Id. */
-  int ELSE = 7;
+  int THEN = 7;
   /** RegularExpression Id. */
-  int END = 8;
+  int ELSE = 8;
   /** RegularExpression Id. */
-  int REPEAT = 9;
+  int END = 9;
   /** RegularExpression Id. */
-  int UNTIL = 10;
+  int REPEAT = 10;
   /** RegularExpression Id. */
-  int READ = 11;
+  int UNTIL = 11;
   /** RegularExpression Id. */
-  int WRITE = 12;
+  int READ = 12;
   /** RegularExpression Id. */
-  int NUM = 13;
+  int WRITE = 13;
   /** RegularExpression Id. */
-  int ID = 14;
+  int NUM = 14;
   /** RegularExpression Id. */
-  int ATRIB = 15;
+  int ID = 15;
+  /** RegularExpression Id. */
+  int ATRIB = 16;
+  /** RegularExpression Id. */
+  int SOM = 17;
+  /** RegularExpression Id. */
+  int SUB = 18;
+  /** RegularExpression Id. */
+  int MULT = 19;
+  /** RegularExpression Id. */
+  int DIV = 20;
+  /** RegularExpression Id. */
+  int ABREPARE = 21;
+  /** RegularExpression Id. */
+  int FECHAPARE = 22;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -43,6 +57,7 @@ public interface TinyConstants {
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
+    "<COMMENT>",
     "\"if\"",
     "\"then\"",
     "\"else\"",
@@ -54,6 +69,12 @@ public interface TinyConstants {
     "<NUM>",
     "<ID>",
     "\":=\"",
+    "\"+\"",
+    "\"-\"",
+    "\"*\"",
+    "\"/\"",
+    "\"(\"",
+    "\")\"",
   };
 
 }

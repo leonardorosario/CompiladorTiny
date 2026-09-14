@@ -11,7 +11,7 @@ public class Tiny {
 
 PARSER_END(Tiny)
 
-SKIP : { " " | "\t" | "\n" | "\r" }
+SKIP : { " " | "\t" | "\n" | "\r" | < COMMENT: "{" (~["}"])* "}" >}
 
 TOKEN : {
     < IF: "if" >
@@ -23,8 +23,14 @@ TOKEN : {
   | < READ: "read" >
   | < WRITE: "write" >
   | < NUM: (["0"-"9"])+ >
-  | < ID: (["a"-"z","A"-"Z"])+>
+  | < ID: ["a"-"z","A"-"Z"] ( ["a"-"z", "A"-"Z", "0"-"9"] )*>
   | < ATRIB: ":=">
+  | < SOM: "+">
+  | < SUB: "-">
+  | < MULT: "*">
+  | < DIV: "/">
+  | <ABREPARE: "(">
+  | <FECHAPARE: ")">
 }
 
 void Programa() :
@@ -32,4 +38,24 @@ void Programa() :
 }//variáveis locais
 {
    <ID> <ATRIB> <NUM> <EOF>
+}
+
+void Expressao():
+{}
+{
+  Termo()
+  ((<SOM> | <SUB>) Termo())*
+}
+
+void Termo():
+{}
+{
+  Fator()
+  ((<MULT> | <DIV>) Fator())*
+}
+
+void Fator():
+{}
+{
+  <ID> | <NUM>|<ABREPARE> Expressao()<FECHAPARE>
 }
